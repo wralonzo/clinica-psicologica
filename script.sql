@@ -203,3 +203,25 @@ LOCK TABLES `campos` WRITE;
 INSERT INTO `campos` VALUES (1,'peinado','checkbox','apariencia',1),(2,'despeinado','checkbox','apariencia',2),(3,'limpio','checkbox','apariencia',3),(4,'sucio','checkbox','apariencia',4),(5,'vestimenta adecuada','checkbox','apariencia',5),(6,'vestimenta adecuada','checkbox','apariencia',6),(7,'delgada','checkbox','apariencia',7),(8,'gorda','checkbox','apariencia',8),(9,'obesa','checkbox','apariencia',9),(10,'acne','checkbox','apariencia',10),(11,'manchas','checkbox','apariencia',11),(12,'discapacidad','checkbox','apariencia',12),(13,'indiferente','checkbox','conducta',1),(14,'confiable','checkbox','conducta',2),(15,'agresiva','checkbox','conducta',3),(16,'hostil','checkbox','conducta',4),(17,'evasiva','checkbox','conducta',5),(18,'defensiva','checkbox','conducta',6),(19,'sugestiva','checkbox','conducta',7),(20,'impulsiva','checkbox','conducta',8),(21,'demandante','checkbox','conducta',9),(22,'insegura','checkbox','conducta',10),(23,'normal','checkbox','conducta',11),(24,'otros','input','conducta',12),(25,'hiperactividad','checkbox','motora',1),(26,'hipo actividad','checkbox','motora',2),(27,'impulsividad','checkbox','motora',3),(28,'agresividad','checkbox','motora',4),(29,'llanto','checkbox','motora',5),(30,'intranquilidad','checkbox','motora',6),(31,'tranquilidad','checkbox','motora',7),(32,'agitacion','checkbox','motora',8),(33,'nevioso','checkbox','motora',9),(34,'normal','checkbox','motora',10),(35,'relajada','checkbox','motora',11),(36,'encogida','checkbox','motora',12),(37,'erecta','checkbox','motora',13),(38,'rigida','checkbox','motora',14),(39,'provocadora','checkbox','motora',15),(40,'seductora','checkbox','motora',16),(41,'flexible','checkbox','motora',17),(42,'seria','checkbox','motora',18),(43,'despreocupada','checkbox','motora',19),(44,'tics','input','motora',100),(45,'Mirada fija','checkbox','motora',21),(46,'mirada indirecta','checkbox','motora',22),(47,'mirada dura','checkbox','motora',23),(48,'mirada suave','checkbox','motora',24),(49,'mirada baja','checkbox','motora',25),(50,'mirada asustadiza','checkbox','motora',26),(51,'confusion','checkbox','conciencia',1),(52,'delirio','checkbox','conciencia',2),(53,'consciente','checkbox','conciencia',3),(54,'inconsciente','checkbox','conciencia',4),(55,'balanceado','checkbox','animo',1),(56,'euforico','checkbox','animo',2),(57,'deprimido','checkbox','animo',3),(58,'irritable','checkbox','animo',4),(59,'angustiado','checkbox','animo',5),(60,'tensionado','checkbox','animo',6),(61,'panico','checkbox','animo',7),(62,'afecto inapropiado','checkbox','animo',8),(63,'tranquilo','checkbox','animo',9),(64,'normal','checkbox','animo',10),(65,'culpa','checkbox','animo',11),(66,'tristeza','checkbox','animo',12),(67,'ansiedad','checkbox','animo',13),(68,'Fuga de ideas','checkbox','pensamiento',1),(69,'bloqueo','checkbox','pensamiento',2),(70,'incoherente','checkbox','pensamiento',3),(71,'normal','checkbox','contenido',1),(72,'delirios de grandeza','checkbox','contenido',1),(73,'persecucion','checkbox','contenido',1),(74,'autoacusacion','checkbox','contenido',1),(75,'minusvalia','checkbox','contenido',1),(76,'hipocondria','checkbox','contenido',1),(77,'fobias','checkbox','contenido',1),(78,'normal','checkbox','memoria',2),(79,'atencion bien dirigida','checkbox','memoria',3),(80,'atencion mal dirigida','checkbox','memoria',4);
 /*!40000 ALTER TABLE `campos` ENABLE KEYS */;
 UNLOCK TABLES;
+--  Auto-generated SQL script #202405182319
+UPDATE clinica.campos
+	SET nombre='vestimenta inadecuada'
+	WHERE id_campo=5;
+UPDATE clinica.campos
+	SET nombre='postura relajada'
+	WHERE id_campo=35;
+UPDATE clinica.campos
+	SET nombre='postura encogida'
+	WHERE id_campo=36;
+UPDATE clinica.campos
+	SET nombre='postura erecta'
+	WHERE id_campo=37;
+UPDATE clinica.campos
+	SET nombre='postura rigida'
+	WHERE id_campo=38;
+UPDATE clinica.campos
+	SET nombre='postura provocadora'
+	WHERE id_campo=39;
+UPDATE clinica.campos
+	SET nombre='postura seductora'
+	WHERE id_campo=40;

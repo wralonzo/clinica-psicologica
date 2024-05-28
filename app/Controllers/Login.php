@@ -33,6 +33,8 @@ class Login extends BaseController
 			if ($authenticatePassword) {
 				$ses_data = [
 					'id' => $data['id'],
+					'nombres' => $data['nombres'],
+					'apellidos' => $data['apellidos'],
 					'role' => $data['role'],
 					'logeado' => TRUE
 				];

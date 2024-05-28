@@ -132,7 +132,7 @@
             </div>
 
             <div class="relative w-full mb-3 px-5 ">
-              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">situacion familiar</label>
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">situacion y ambiente familiar</label>
               <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="situacion familiar" name="situacion_familiar" />
             </div>
 
@@ -141,12 +141,12 @@
             </div>
 
             <div class="relative w-full mb-3 px-5 ">
-              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">historia de problema</label>
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">historia del problema actual</label>
               <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="historia problema" name="historia_problema" />
             </div>
 
             <div class="relative w-full mb-3 px-5 ">
-              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">historia patologica</label>
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">historia patologica y no patologica</label>
               <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="historia_patologica" name="historia_patologica" />
             </div>
 
@@ -196,7 +196,7 @@
               <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="pruebas_auxiliares" name="pruebas_auxiliares" />
             </div>
             <div class="relative w-full mb-3 px-5 ">
-              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Criterios</label>
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Criterios diagnosticos</label>
               <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="criterios_diagnostico" name="criterios_diagnostico" />
             </div>
             <!-- <div class="relative w-full mb-3 px-5 ">
@@ -211,10 +211,10 @@
               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Metas alcanzadas</label>
               <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="metas_alcanzadas" name="metas_alcanzadas" />
             </div>
-            <div class="relative w-full mb-3 px-5 ">
+            <!-- <div class="relative w-full mb-3 px-5 ">
               <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Nombre</label>
               <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="nombre" name="nombre" />
-            </div>
+            </div> -->
           </div>
 
           <hr class="py-3" />
@@ -270,7 +270,7 @@
           <div class="relative w-full mb-2 px-5">
             <br>
             <br>
-            <h2 class="text-xs text-blueGray-600 font-bold text-2xl text-center mb-5">Evaluacion DSM</h2>
+            <h2 class="text-xs text-blueGray-600 font-bold text-2xl text-center mb-5">Evaluacion segun DSM V WHODA 2.0</h2>
           </div>
 
           <table class="items-center w-full dsm">

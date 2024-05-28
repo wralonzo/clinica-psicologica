@@ -154,7 +154,7 @@
             </div>
 
             <div class="relative w-full mb-3 px-5 ">
-              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">situacion familiar</label>
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">situacion y ambiente familiar</label>
               <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="situacion familiar" value="<?= isset($ficha['situacion_familiar']) ? $ficha['situacion_familiar'] : '' ?>" name="situacion_familiar" />
             </div>
 
@@ -164,12 +164,12 @@
             </div>
 
             <div class="relative w-full mb-3 px-5 ">
-              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">historia de problema</label>
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">historia del problema actual</label>
               <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="historia problema" value="<?= isset($ficha['historia_problema']) ? $ficha['historia_problema'] : '' ?>" name="historia_problema" />
             </div>
 
             <div class="relative w-full mb-3 px-5 ">
-              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">historia patologica</label>
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">historia patologica y no patologica</label>
               <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="historia_patologica" value="<?= isset($ficha['historia_patologica']) ? $ficha['historia_patologica'] : '' ?>" name="historia_patologica" />
             </div>
 
@@ -219,7 +219,7 @@
               <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="pruebas_auxiliares" value="<?= $ficha['pruebas_auxiliares'] ?>" name="pruebas_auxiliares" />
             </div>
             <div class="relative w-full mb-3 px-5 ">
-              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Criterios</label>
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Criterios diagnosticos</label>
               <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="criterios_diagnostico" value="<?= $ficha['criterios_diagnostico'] ?>" name="criterios_diagnostico" />
             </div>
             <!-- <div class="relative w-full mb-3 px-5 ">
@@ -249,11 +249,12 @@
           <table class="tableFamiliar w-full bg-transparent">
             <thead>
               <tr>
-                <th class="uppercase">nombre</th>
+                <th class="uppercase">Nombres</th>
                 <th class="uppercase">Sexo</th>
                 <th class="uppercase">Edad</th>
-                <th class="uppercase">escolaridad</th>
-                <th class="uppercase">observacion</th>
+                <th class="uppercase">Estado civil</th>
+                <th class="uppercase">Escolaridad u ocupacion</th>
+                <th class="uppercase">observacion (estado civil)</th>
                 <th></th>
               </tr>
             </thead>
@@ -274,6 +275,11 @@
                   <td>
                     <div class="relative w-full mb-3 px-5 ">
                       <input value="<?= $sit['edad'] ?>" required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="edad" name="situcionOld[<?= $sit['id_situacion'] ?>][edadf]" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="relative w-full mb-3 px-5 ">
+                      <input value="<?= $sit['estado_civil'] ?>" required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="estado_civil" name="situcionOld[<?= $sit['id_situacion'] ?>][estado_civilf]" />
                     </div>
                   </td>
                   <td>
@@ -301,7 +307,7 @@
           <div class="relative w-full mb-2 px-5">
             <br>
             <br>
-            <h2 class="text-xs text-blueGray-600 font-bold text-2xl text-center mb-5">Evaluacion DSM</h2>
+            <h2 class="text-xs text-blueGray-600 font-bold text-2xl text-center mb-5">Evaluacion segun DSM V WHODA 2.0</h2>
           </div>
 
           <table class="items-center w-full dsm">
@@ -519,6 +525,7 @@
     table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key + '][nombref]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
     table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key + '][sexof]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
     table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key + '][edadf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
+    table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key + '][estado_civilf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
     table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key + '][escolaridadf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
     table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key + '][observacionf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
 
@@ -539,6 +546,7 @@
     var response = {};
     response.nombref = $('.maintableFamiliar input[name="nombref"]').val();
     response.sexof = $('.maintableFamiliar input[name="sexof"]').val();
+    response.estado_civilf = $('.maintableFamiliar input[name="estado_civilf"]').val();
     response.edadf = $('.maintableFamiliar input[name="edadf"]').val();
     response.escolaridadf = $('.maintableFamiliar input[name="escolaridadf"]').val();
     response.observacionf = $('.maintableFamiliar input[name="observacionf"]').val();
@@ -551,6 +559,7 @@
     previewArea.find('input[name="nombref"]').val('');
     previewArea.find('input[name="sexof"]').val('');
     previewArea.find('input[name="edadf"]').val('');
+    previewArea.find('input[name="escolaridadf"]').val('');
     previewArea.find('input[name="escolaridadf"]').val('');
     previewArea.find('input[name="observacionf"]').val('');
   }

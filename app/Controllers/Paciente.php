@@ -104,6 +104,7 @@ class Paciente extends BaseController
 				$dataField = [
 					'nombre' => $field['nombref'],
 					'sexo' => $field['sexof'],
+					'estado_civil' => $field['estado_civilf'],
 					'edad' => $field['edadf'],
 					'escolaridad' => $field['escolaridadf'],
 					'observacion' => $field['observacionf'],
@@ -266,6 +267,7 @@ class Paciente extends BaseController
 					'nombre' => $item['nombref'],
 					'sexo' => $item['sexof'],
 					'edad' => $item['edadf'],
+					'estado_civil' => $item['estado_civilf'],
 					'escolaridad' => $item['escolaridadf'],
 					'observacion' => $item['observacionf'],
 				];
@@ -280,6 +282,7 @@ class Paciente extends BaseController
 					'nombre' => $field['nombref'],
 					'sexo' => $field['sexof'],
 					'edad' => $field['edadf'],
+					'estado_civil' => $field['estado_civilf'],
 					'escolaridad' => $field['escolaridadf'],
 					'observacion' => $field['observacionf'],
 				];

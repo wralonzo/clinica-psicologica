@@ -26,7 +26,6 @@
 </head>
 
 <body class="text-blueGray-700 antialiased">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
         <nav id='amburguer' class="amburguer md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6">
             <div id="amburguer" class="amburguer md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto">
@@ -100,28 +99,28 @@
                         <?php if (session()->get('role') == 'admin') : ?>
                             <li class="items-center">
                                 <a href="<?= base_url() ?>user/list" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
-                                    <i class="fas fa-tools mr-2 text-sm text-blueGray-300"></i>
+                                    <i class="fas fa-users mr-2 text-sm text-blueGray-300"></i>
                                     Usuarios
                                 </a>
                             </li>
                         <?php endif; ?>
                         <li class="items-center">
                             <a href="<?= base_url() ?>paciente/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
-                                <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
+                                <i class="fa fa-solid fa-hospital-user mr-2 text-sm text-blueGray-300"></i>
                                 Pacientes
                             </a>
                         </li>
                         <?php if (session()->get('role') == 'admin') : ?>
                             <li class="items-center">
                                 <a href="<?= base_url() ?>estudiante/display" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
-                                    <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
+                                    <i class="fas fa-solid fa-user-graduate mr-2 text-sm text-blueGray-300"></i>
                                     Estudiantes
                                 </a>
                             </li>
                         <?php endif; ?>
                         <li class="items-center">
                             <a href="<?= base_url() ?>test/testdisplay" class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500">
-                                <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
+                                <i class="fas fa-solid fa-clipboard-list mr-2 text-sm text-blueGray-300"></i>
                                 Tests pacientes
                             </a>
                         </li>
@@ -162,12 +161,13 @@
                             </div>
                         </a>
                         <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" id="user-dropdown">
-                            <a href="<?= base_url() ?>login/logout" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Cerrar
-                                Sesión</a>
+                            <a href="<?= base_url() ?>login/logout" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
+                            <?php echo session()->get('nombres'); ?> <?php echo session()->get('apellidos'); ?>
+                            </a>
                         </div>
                     </ul>
                 </div>
             </nav>
             <!-- Header -->
-            <div class="relative bg-blue-600 md:pt-32 pb-24 pt-12">
+            <div class="relative md:pt-32 pb-24 pt-12" style="background-color: #1BCDB8;">
                 <div class="px-4 md:px-10 mx-auto w-full">

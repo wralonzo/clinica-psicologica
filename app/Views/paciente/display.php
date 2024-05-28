@@ -102,7 +102,7 @@
 
     function deletePass(id) {
         Swal.fire({
-            title: "Quiere eliminar el registro?",
+            title: "¿Quiere eliminar el registro?",
             text: "Eliminar paciente!",
             icon: "warning",
             showCancelButton: true,

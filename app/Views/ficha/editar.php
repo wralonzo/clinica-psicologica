@@ -2,7 +2,7 @@
 </div>
 <div class="px-4 md:px-12 mx-auto w-full -m-24">
   <div class="flex-auto px-4 lg:px-10 py-20 pt-0">
-    <form method="POST" action="<?= base_url() ?>ficha/editar/<?= $id ?>">
+    <form method="POST" action="<?= base_url() ?>ficha/editar/<?= $id ?>" class="confirmar">
       <div class="relative w-full mb-2 px-5">
         <h2 class="text-xs text-white font-bold text-2xl text-center mb-5">Actualizar detalle de ficha del paciente</h2>
         <a class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" onclick="window.print()">Print</a>
@@ -107,3 +107,25 @@
     </form>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    $('.confirmar').submit(function(e) {
+      e.preventDefault();
+      Swal.fire({
+        title: "Quiere actualizar el registro?",
+        text: "Guardar!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonText: 'Cancelar?',
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Guardar el registro!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.submit();
+        }
+      });
+    });
+  })
+</script>

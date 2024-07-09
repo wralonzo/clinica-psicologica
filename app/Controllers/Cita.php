@@ -45,7 +45,7 @@ class Cita extends BaseController
 		} else {
 			$data['validation'] = $this->validator;
 			$userModel = new Estudiante_model();
-			$dataDb = $userModel->findAll();
+			$dataDb = $userModel->where('estado', 'Activo')->findAll();
 			$paciente = new Paciente_model();
 			$pacientes = $paciente->findAll();
 			$data['estudiantes'] = $dataDb;

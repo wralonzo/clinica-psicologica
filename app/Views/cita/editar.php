@@ -5,7 +5,7 @@
     <div class="text-blueGray-400 text-center mb-3 font-bold">
       <small>Cita</small>
     </div>
-    <form method="POST" action="<?= base_url() ?>cita/editar/<?= $data['id_cita'] ?>">
+    <form method="POST" action="<?= base_url() ?>cita/editar/<?= $data['id_cita'] ?>" class="confirmar">
       <div id="main" class="grid grid-rows-2 grid-flow-col">
         <div class="relative w-full mb-3 px-5">
           <label class="block uppercase text-xs text-white font-bold mb-2" for="grid-password">fecha</label>
@@ -30,6 +30,7 @@
             <label for="country" class="block text-sm font-medium text-gray-700">Estado de la cita </label>
             <select id="estado_cita" name="estado_cita" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
               <option <?= $data['estado_cita'] == 'Cancelada' ? 'selected' : '' ?> value="Cancelada">Cancelada</option>
+              <option <?= $data['estado_cita'] == 'Modificada' ? 'selected' : '' ?> value="Modificada">Modificada</option>
             </select>
           </div>
         </div>
@@ -84,3 +85,25 @@
   </form>
 </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    $('.confirmar').submit(function(e) {
+      e.preventDefault();
+      Swal.fire({
+        title: "Quiere actualizar el registro?",
+        text: "Guardar!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonText: 'Cancelar?',
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Guardar el registro!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.submit();
+        }
+      });
+    });
+  })
+</script>

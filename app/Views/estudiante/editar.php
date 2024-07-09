@@ -5,7 +5,7 @@
     <div class="text-blueGray-400 text-center mb-3 font-bold">
       <small>Estudiante</small>
     </div>
-    <form method="POST" action="<?= base_url() ?>estudiante/editar/<?= $user_data['id_estudiante'] ?>">
+    <form method="POST" action="<?= base_url() ?>estudiante/editar/<?= $user_data['id_estudiante'] ?>" class="confirmar">
       <div id="main" class="grid grid-rows-4 grid-flow-col">
         <div class="relative w-full mb-3 px-5">
           <label class="block uppercase text-white text-xs font-bold mb-2" for="grid-password">carnet</label>
@@ -93,3 +93,26 @@
     </form>
   </div>
 </div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    $('.confirmar').submit(function(e) {
+      e.preventDefault();
+      Swal.fire({
+        title: "Quiere actualizar el registro?",
+        text: "Guardar!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonText: 'Cancelar?',
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Guardar el registro!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.submit();
+        }
+      });
+    });
+  })
+</script>

@@ -1,7 +1,7 @@
 </div>
 </div>
 <div class="px-4 md:px-2 mx-auto w-full -m-24">
-  <form method="POST" action="<?= base_url() ?>paciente/registrar">
+  <form method="POST" action="<?= base_url() ?>paciente/registrar" class="confirmar">
 
     <div class="flex-auto px-4 lg:px-10 py-15 pt-0">
       <div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
@@ -594,4 +594,26 @@
   function delete_itemplan(row, itemid) {
     $(row).parents('tr').remove();
   }
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    $('.confirmar').submit(function(e) {
+      e.preventDefault();
+      Swal.fire({
+        title: "Quiere guardar el registro?",
+        text: "Guardar!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonText: 'Cancelar?',
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Guardar el registro!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.submit();
+        }
+      });
+    });
+  })
 </script>

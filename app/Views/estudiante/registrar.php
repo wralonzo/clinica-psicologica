@@ -5,7 +5,7 @@
     <div class="text-blueGray-400 text-center mb-3 font-bold">
       <small>Login</small>
     </div>
-    <form method="POST" action="<?= base_url() ?>estudiante/registrar">
+    <form method="POST" action="<?= base_url() ?>estudiante/registrar" class="confirmar">
       <div id="main" class="grid grid-rows-4 grid-flow-col">
         <div class="relative w-full mb-2 px-5">
           <label class="block uppercase text-xs text-white font-bold mb-2" for="grid-password">carnet</label>
@@ -91,3 +91,25 @@
     </form>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    $('.confirmar').submit(function(e) {
+      e.preventDefault();
+      Swal.fire({
+        title: "Quiere guardar el registro?",
+        text: "Guardar!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonText: 'Cancelar?',
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Guardar el registro!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.submit();
+        }
+      });
+    });
+  })
+</script>

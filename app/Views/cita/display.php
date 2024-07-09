@@ -7,7 +7,7 @@
                         Listado de reservaciones
                     </h3>
                     <div class="grid gap-5">
-                        <a href="<?php echo base_url(); ?>cita/registrar" >
+                        <a href="<?php echo base_url(); ?>cita/registrar">
                             <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-green-500">
                                 <i class="fa fa-plus fa-2x"></i>
                             </div>
@@ -51,7 +51,7 @@
                 <tbody>
 
                     <?php if (count($citas) > 0) : foreach ($citas as $cita) : ?>
-                            <tr style="background-color: goldenrod;">
+                            <tr style="color: red;" class="bg-danger">
                                 <td style="background-color: goldenrod;" class="border-t-0 px-6 align-middle border-l-0 border-r-0 bg-red text-xs whitespace-nowrap p-4 text-left flex items-center">
 
                                     <span class="ml-3 font-bold text-blueGray-600">
@@ -101,6 +101,8 @@
 
 <script>
     $("table#example").Grid({
+        nItemUpdated: paint,
+        onRefreshed: paint,
         pagination: {
             enabled: true,
             limit: 5,
@@ -110,6 +112,12 @@
             enabled: true
         }
     });
+
+    function paint(ev) {
+        $("#example tbody tr").each((i, tr) => {
+            $(tr).children().css("background-color", tr.children[1].textContent == 'Cancelada' ? "red" : "");
+        })
+    }
 
 
     function deletePass(id) {
@@ -123,7 +131,7 @@
             confirmButtonText: "Eliminar el registro!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch('<?=  base_url() ?>cita/borrar/'+id, {
+                fetch('<?= base_url() ?>cita/borrar/' + id, {
                         method: 'GET',
                         headers: {
                             "Content-Type": "application/json",

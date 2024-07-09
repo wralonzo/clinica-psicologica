@@ -229,6 +229,7 @@
                 <th class="uppercase">nombre</th>
                 <th class="uppercase">Sexo</th>
                 <th class="uppercase">Edad</th>
+                <th class="uppercase">Estado cívil</th>
                 <th class="uppercase">escolaridad</th>
                 <th class="uppercase">observacion</th>
                 <th></th>
@@ -249,6 +250,11 @@
                 <td>
                   <div class="relative w-full mb-3 px-5 ">
                     <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="edad" name="situcion[0][edadf]" />
+                  </div>
+                </td>
+                <td>
+                  <div class="relative w-full mb-3 px-5 ">
+                    <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Estado civil" name="situcion[0][estado_civilf]" />
                   </div>
                 </td>
                 <td>
@@ -457,6 +463,7 @@
     table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key + '][nombref]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
     table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key + '][sexof]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
     table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key + '][edadf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
+    table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key + '][estado_civilf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
     table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key + '][escolaridadf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
     table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key + '][observacionf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
 
@@ -478,6 +485,7 @@
     response.nombref = $('.maintableFamiliar input[name="nombref"]').val();
     response.sexof = $('.maintableFamiliar input[name="sexof"]').val();
     response.edadf = $('.maintableFamiliar input[name="edadf"]').val();
+    response.estado_civilf = $('.maintableFamiliar input[name="estado_civilf"]').val();
     response.escolaridadf = $('.maintableFamiliar input[name="escolaridadf"]').val();
     response.observacionf = $('.maintableFamiliar input[name="observacionf"]').val();
     return response;
@@ -489,6 +497,7 @@
     previewArea.find('input[name="nombref"]').val('');
     previewArea.find('input[name="sexof"]').val('');
     previewArea.find('input[name="edadf"]').val('');
+    previewArea.find('input[name="estado_civilf"]').val('');
     previewArea.find('input[name="escolaridadf"]').val('');
     previewArea.find('input[name="observacionf"]').val('');
   }

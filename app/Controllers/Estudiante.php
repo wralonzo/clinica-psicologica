@@ -75,7 +75,7 @@ class Estudiante extends BaseController
 		$dataModel = new Estudiante_model();
 
 		helper(['form']);
-		$dataOne = $dataModel->where('estado', 'Activo')->where('id_estudiante', $id_cliente)->first();
+		$dataOne = $dataModel->where('id_estudiante', $id_cliente)->first();
 		if (!$this->request->getPost()) {
 			$data['user_data'] = $dataOne;
 			return view('capas/cabecera')
@@ -85,6 +85,17 @@ class Estudiante extends BaseController
 		$dataModel->where('id_estudiante', $id_cliente)
 			->set($this->request->getVar())
 			->update();
+		$estado = 1;
+		if($this->request->getVar('estado') == 'Inactivo'){
+			$estado = 0;
+		}
+		$dataUserLogin = [
+			'estado' => $estado
+		];
+		$userModel = new LoginModel();
+		$userModel->where('id', $dataOne['id_usuario'])
+		->set($dataUserLogin)
+		->update();
 		$this->session->setFlashdata('no_access', 'El registro ha sido modificado con éxito');
 		return redirect()->to('/estudiante/display');
 	}

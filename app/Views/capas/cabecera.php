@@ -55,7 +55,8 @@
                     <li class="inline-block relative">
                         <a class="text-blueGray-500 block" href="#pablo" onclick="openDropdown(event,'user-responsive-dropdown')">
                             <div class="items-center flex">
-                                <span class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"><img alt="..." class="w-full rounded-full align-middle border-none shadow-lg" src="../../assets/img/team-1-800x800.jpg" /></span>
+                                <span class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full">
+                                    Cerrar Sesión
                             </div>
                         </a>
                         <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" id="user-responsive-dropdown">
@@ -155,15 +156,17 @@
                         <h5 style="color: white"><?php echo session()->get('no_access'); ?></h5>
                     <?php endif ?>
                     <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
-                        <a class="text-blueGray-500 block" href="#pablo" onclick="openDropdown(event,'user-dropdown')">
+                        <a class="text-blueGray-500 block" href="#pablo">
                             <div class="items-center flex">
-                                <span class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"><img alt="..." class="w-full rounded-full align-middle border-none shadow-lg" src="<?= base_url() ?>assets/img/team-1-800x800.jpg" /></span>
+                                <span>
+                                    <a href="<?= base_url() ?>login/logout" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-white">
+                                        Cerrar Sesión: <?php echo session()->get('nombres'); ?> <?php echo session()->get('apellidos'); ?>
+                                    </a>
+                                </span>
                             </div>
                         </a>
                         <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" id="user-dropdown">
-                            <a href="<?= base_url() ?>login/logout" class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
-                            <?php echo session()->get('nombres'); ?> <?php echo session()->get('apellidos'); ?>
-                            </a>
+
                         </div>
                     </ul>
                 </div>

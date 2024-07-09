@@ -23,10 +23,12 @@
           <label class="block uppercase text-white text-xs font-bold mb-2" for="grid-password">Contacto</label>
           <input type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Contacto" name="contacto" value="<?= $user_data['contacto'] ?>" />
         </div>
+        <?php if (session()->get('role') == 'admin'): ?>
         <div class="relative w-full mb-3 px-5">
-          <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Contraseña</label>
+          <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Ingrese Contraseña nueva</label>
           <input type="password" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="Password" name="clave" />
         </div>
+        <?php endif;?>
         <div class="relative w-full mb-3 px-5">
           <div id="pecesSelecr" class="col-span-6 sm:col-span-3 rounded-md border border-gray-300 bg-white py-2 px-3">
             <label for="country" class="block text-sm font-medium text-gray-700">Seleccione ROL</label>

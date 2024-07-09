@@ -12,6 +12,7 @@ use App\Models\LoginModel;
 use App\Models\MembresiaModel;
 use App\Models\Paciente_model;
 use App\Models\ReservacionModel;
+use App\Models\Test_model;
 
 class Home extends BaseController
 {
@@ -36,10 +37,12 @@ class Home extends BaseController
         $estudianteModel = new Estudiante_model();
         $pacienteModel = new Paciente_model();
         $citasModel = new Cita_model();
+        $testModel = new Test_model();
         $data['usuarios'] = $userModel->get()->getNumRows();
         $data['estudiantes'] = $estudianteModel->get()->getNumRows();
         $data['pacientes'] = $pacienteModel->get()->getNumRows();
         $data['citas'] = $citasModel->get()->getNumRows();
+        $data['tests'] = $testModel->get()->getNumRows();
         return view('capas/cabecera')
         .view('capas/menu', $data)
         .view('capas/footer');

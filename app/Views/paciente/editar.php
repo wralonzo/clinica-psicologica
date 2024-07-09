@@ -102,41 +102,41 @@
         <div id="main" class="grid grid-rows-3 grid-flow-col">
           <div class="relative w-full mb-3 px-5">
             <label class="block uppercase text-xs text-blueGray-600 font-bold mb-2" for="grid-password">Nombre</label>
-            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="nombre" value="<?= $conyugue['nombre'] ?>" name="nombrec" />
+            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="nombre" value="<?= isset($conyugue['nombre'])?$conyugue['nombre']: '' ?>" name="nombrec" />
           </div>
 
           <div class="relative w-full mb-3 px-5">
             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">ocupacion</label>
-            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="ocupacion" value="<?= $conyugue['ocupacion'] ?>" name="ocupacionc" />
+            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="ocupacion" value="<?= isset($conyugue['ocupacion'])? $conyugue["ocupacion"]: "" ?>" name="ocupacionc" />
           </div>
 
           <div class="relative w-full mb-3 px-5">
             <label class="block uppercase  text-blueGray-600 text-xs font-bold mb-2" for="grid-password">observacion</label>
-            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="observacion" value="<?= $conyugue['observacion'] ?>" name="observacionc" />
+            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="observacion" value="<?= isset($conyugue['observacion'])? $conyugue["observacion"]: "" ?>" name="observacionc" />
           </div>
 
           <div class="relative w-full mb-3 px-5">
             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">escolaridad</label>
-            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="escolaridad" value="<?= $conyugue['escolaridad'] ?>" name="escolaridadc" />
+            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="escolaridad" value="<?= isset($conyugue['escolaridad'])? $conyugue["escolaridad"]: "" ?>" name="escolaridadc" />
           </div>
 
           <div class="relative w-full mb-3 px-5">
             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">edad</label>
-            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="edad" value="<?= $conyugue['edad'] ?>" name="edadc" />
+            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="edad" value="<?= isset($conyugue['edad'])? $conyugue[""]: "edad" ?>" name="edadc" />
           </div>
 
           <div class="relative w-full mb-3 px-5">
             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">lugar familia</label>
-            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="lugar familia" value="<?= $conyugue['lugar_familia'] ?>" name="lugar_familiac" />
+            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="lugar familia" value="<?= isset($conyugue['lugar_familia'])? $conyugue["lugar_familia"]: "" ?>" name="lugar_familiac" />
           </div>
 
           <div class="relative w-full mb-3 px-5">
             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">direccion</label>
-            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="direccion" value="<?= $conyugue['direccion'] ?>" name="direccionc" />
+            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="direccion" value="<?= isset($conyugue['direccion'])? $conyugue["direccion"]: "" ?>" name="direccionc" />
           </div>
           <div class="relative w-full mb-3 px-5">
             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">telefono</label>
-            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="telefono" value="<?= $conyugue['telefono'] ?>" name="telefonoc" />
+            <input required type="text" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" placeholder="telefono" value="<?= isset($conyugue['telefono'])? $conyugue["telefono"]: "" ?>" name="telefonoc" />
           </div>
         </div>
         <hr class="py-3" />

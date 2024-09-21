@@ -90,7 +90,9 @@ class Estudiante extends BaseController
 			$estado = 0;
 		}
 		$dataUserLogin = [
-			'estado' => $estado
+			'estado' => $estado,
+			'nombres' => $this->request->getVar('nombre'),
+			'apellidos' => $this->request->getVar('apellido'),
 		];
 		$userModel = new LoginModel();
 		$userModel->where('id', $dataOne['id_usuario'])

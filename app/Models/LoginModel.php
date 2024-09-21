@@ -16,6 +16,7 @@ class LoginModel extends Model
         'estado',
         'contacto',
         'role',
-        'created_at'
+        'created_at',
+        'image'
     ];
 }

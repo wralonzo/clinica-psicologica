@@ -43,6 +43,17 @@ class Home extends BaseController
         $data['pacientes'] = $pacienteModel->get()->getNumRows();
         $data['citas'] = $citasModel->get()->getNumRows();
         $data['tests'] = $testModel->get()->getNumRows();
+
+        $citasModelNew = new Cita_model();
+
+		$dataCitasModel = $citasModelNew
+			->select('citas.id_cita as cita, citas.fecha, citas.jornada, citas.hora,
+		 citas.estado_cita, hr.nombre as paciente, cli.carnet, cli.nombre')
+			->join('estudiante as cli', 'cli.id_estudiante = citas.estudiante')
+			->join('paciente as hr', 'hr.id_paciente = citas.paciente')
+			->findAll();
+		$data['citasModel'] = $dataCitasModel;
+
         return view('capas/cabecera')
         .view('capas/menu', $data)
         .view('capas/footer');

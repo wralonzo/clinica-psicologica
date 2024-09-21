@@ -94,6 +94,11 @@ class Paciente extends BaseController
 				"evaluacion_dsm" => $this->request->getVar("evaluacion_dsm"),
 				"plan_terapeutico" => $this->request->getVar("plan_terapeutico"),
 				"metas_alcanzadas" => $this->request->getVar("metas_alcanzadas"),
+				"padres" => $this->request->getVar("padres"),
+				"hermanos" => $this->request->getVar("hermanos"),
+				"vivecon" => $this->request->getVar("vivecon"),
+				"observacionessituacion" => $this->request->getVar("observacionessituacion"),
+				"genograma" => $this->request->getVar("genograma"),
 			];
 			$pacenteModel = new Ficha_Paciente_model();
 			$dataFicha['paciente'] = $idPaciente;
@@ -148,7 +153,7 @@ class Paciente extends BaseController
 			return redirect()->to('/paciente/display');
 		} else {
 			$estudiante = new Estudiante_model();
-			$dataE = $estudiante->findAll();
+			$dataE = $estudiante->where('estado', 'Activo')->findAll();
 			$data['estudiantes'] = $dataE;
 			return view('capas/cabecera')
 				. view('paciente/registrar', $data)
@@ -164,7 +169,7 @@ class Paciente extends BaseController
 		$dataOne = $dataModel->where('id_paciente', $idPaciente)->first();
 		if (!$this->request->getPost()) {
 			$estudiante = new Estudiante_model();
-			$dataSend = $estudiante->findAll();
+			$dataSend = $estudiante->where('estado','Activo')->findAll();
 
 			$conyugueModel = new Conyugue_model();
 			$dataCon = $conyugueModel->where('paciente', $idPaciente)->first();
@@ -226,6 +231,7 @@ class Paciente extends BaseController
 			'direccion' => $this->request->getVar('direccionc'),
 			'direccion' => $this->request->getVar('direccionc'),
 			'telefono' => $this->request->getVar('telefonoc'),
+			'estudiante' => $this->request->getVar('estudiante'),
 		];
 		$conyugueModel->where('paciente', $idPaciente)
 			->set($dataConyugue)
@@ -252,6 +258,11 @@ class Paciente extends BaseController
 			"evaluacion_dsm" => $this->request->getVar("evaluacion_dsm"),
 			"plan_terapeutico" => $this->request->getVar("plan_terapeutico"),
 			"metas_alcanzadas" => $this->request->getVar("metas_alcanzadas"),
+			"padres" => $this->request->getVar("padres"),
+			"hermanos" => $this->request->getVar("hermanos"),
+			"vivecon" => $this->request->getVar("vivecon"),
+			"observacionessituacion" => $this->request->getVar("observacionessituacion"),
+			"genograma" => $this->request->getVar("genograma"),
 		];
 		$fichaModel = new Ficha_Paciente_model();
 		$fichaModel->where('paciente', $idPaciente)

@@ -35,5 +35,10 @@ class Ficha_Paciente_model extends Model
         'update_at',
         'paciente',
         'nombre',
+        'padres',
+        'hermanos',
+        'vivecon',
+        'observacionessituacion',
+        'genograma',
     ];
 }

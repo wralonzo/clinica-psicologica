@@ -19,8 +19,9 @@
 
     <script src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
     <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
-    <script src="https://unpkg.com/gridjs-jquery/dist/gridjs.production.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" />
+    <script src="https://unpkg.com/gridjs-jquery/dist/gridjs.production.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style></style>
 </head>
@@ -62,6 +63,21 @@
                                 Sesión</a>
                         </div>
                     </li>
+                    <li class="inline-block relative">
+                            <a class="text-blueGray-500 block" href="#pablo"
+                                onclick="openDropdown(event,'user-responsive-dropdown')">
+                                <div class="items-center flex">
+                                    <span
+                                        class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"><img
+                                            alt="..." class="w-full rounded-full align-middle border-none shadow-lg"
+                                            src="../../assets/img/team-1-800x800.jpg" /></span>
+                                </div>
+                            </a>
+                            <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+                                id="user-responsive-dropdown">
+                                <a href="#pablo"
+                                    class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Cerrar
+                        </li>
                     <li class="inline-block relative">
                         <a class="text-blueGray-500 block" href="#pablo"
                             onclick="openDropdown(event,'user-responsive-dropdown')">
@@ -173,7 +189,41 @@
             </div>
         </nav>
 
+
         <div id='amburguerMain' class="amburguerMain relative md:ml-64 bg-blueGray-50">
+            <nav
+            class="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4">
+                <div class="w-full mx-autp items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4">
+                    <a class="text-white text-sm uppercase hidden lg:inline-block font-semibold"
+                        href="./index.html">Inicio</a>
+                    <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
+                        <a class="text-blueGray-500 block" href="#pablo" onclick="openDropdown(event,'user-dropdown')">
+                            <div class="items-center flex">
+                                <span
+                                    class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"><img
+                                        alt="..." class="w-full rounded-full align-middle border-none shadow-lg"
+                                        src="<?php echo base_url().'uploads/'. session()->get('image'); ?> " /></span>
+                            </div>
+                        </a>
+                        <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+                            id="user-dropdown">
+                            <a href="#"
+                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Cerrar
+                                <?php echo session()->get('nombres'); ?>
+                                    <?php echo session()->get('apellidos'); ?></a>
+                        </div>
+                        <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+                            id="user-dropdown">
+                            <a href="<?= base_url() ?>login/logout"
+                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Cerrar
+                                Sesión</a>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Header -->
+
+        <!-- <div id='amburguerMain' class="amburguerMain relative md:ml-64 bg-blueGray-50">
 
             <nav
                 class="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4">
@@ -189,24 +239,44 @@
                     <h5 style="color: white"><?php echo session()->get('no_access'); ?></h5>
                     <?php endif ?>
                     <ul class="flex-col md:flex-row list-none items-center hidden md:flex">
+                        <li class="inline-block relative">
+                            <a class="text-blueGray-500 block" href="#pablo"
+                                onclick="openDropdown(event,'user-responsive-dropdown')">
+                                <div class="items-center flex">
+                                    <span
+                                        class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"><img
+                                            alt="..." class="w-full rounded-full align-middle border-none shadow-lg"
+                                            src="../../assets/img/team-1-800x800.jpg" /></span>
+                                </div>
+                            </a>
+                            <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+                                id="user-responsive-dropdown">
+                                <a href="#pablo"
+                                    class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Cerrar
+                        </li>
                         <a class="text-blueGray-500 block" href="#pablo">
                             <div class="items-center flex">
-                                <span>
-                                    <a href="<?= base_url() ?>login/logout"
-                                        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-white">
-                                        Cerrar Sesión: <?php echo session()->get('nombres'); ?>
-                                        <?php echo session()->get('apellidos'); ?>
-                                    </a>
-                                </span>
+                                <span
+                                    class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"><img
+                                        alt="..." class="w-full rounded-full align-middle border-none shadow-lg"
+                                        src="<?php echo base_url().'uploads/'. session()->get('image'); ?> " /></span>
                             </div>
-                        </a>
-                        <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
-                            id="user-dropdown">
-
-                        </div>
-                    </ul>
+                            <span>
+                                <a href="<?= base_url() ?>login/logout"
+                                    class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-white">
+                                    Cerrar Sesión: <?php echo session()->get('nombres'); ?>
+                                    <?php echo session()->get('apellidos'); ?>
+                                </a>
+                            </span>
                 </div>
-            </nav>
-            <!-- Header -->
-            <div class="relative md:pt-32 pb-24 pt-12" style="background-color: #1BCDB8;">
-                <div class="px-4 md:px-10 mx-auto w-full">
+                </a>
+                <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+                    id="user-dropdown">
+
+                </div>
+                </ul>
+        </div>
+        </nav>
+        Header -->
+        <div class="relative md:pt-32 pb-24 pt-12" style="background-color: #1BCDB8;">
+            <div class="px-4 md:px-10 mx-auto w-full"> 

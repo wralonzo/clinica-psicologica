@@ -65,8 +65,6 @@
     </div>
 </div>
 
-
-<?php if(session()->get('role') == 'admin'): ?>
 <div class="flex flex-wrap py-6">
     <div class="w-full lg:w-6/12 xl:w-6/12 px-4">
         <div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg">
@@ -204,8 +202,6 @@
     </div>
 
 </div>
-
-<?php endif; ?>
 
 
 <script type="text/javascript">

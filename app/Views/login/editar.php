@@ -5,7 +5,8 @@
         <div class="text-blueGray-400 text-center mb-3 font-bold">
             <small>Login</small>
         </div>
-        <form method="POST" action="<?= base_url() ?>user/editar/<?= $user_data['id'] ?>" class="confirmar" enctype='multipart/form-data'>
+        <form method="POST" action="<?= base_url() ?>user/editar/<?= $user_data['id'] ?>" class="confirmar"
+            enctype='multipart/form-data'>
             <div id="main" class="grid grid-rows-4 grid-flow-col">
                 <div class="relative w-full mb-3 px-5">
                     <label class="block uppercase text-white text-xs font-bold mb-2" for="grid-password">Correo</label>
@@ -28,7 +29,7 @@
                         placeholder="Apellidos" name="apellidos" value="<?= $user_data['apellidos'] ?>" />
                 </div>
                 <div class="relative w-full mb-3 px-5">
-                    <label class="block uppercase text-white text-xs font-bold mb-2"
+                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                         for="grid-password">Contacto</label>
                     <input type="text"
                         class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
@@ -36,7 +37,7 @@
                 </div>
                 <?php if (session()->get('role') == 'admin'): ?>
                 <div class="relative w-full mb-3 px-5">
-                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">Ingrese
+                    <label class="block uppercase text-white text-xs font-bold mb-2" for="grid-password">Ingrese
                         Contraseña nueva</label>
                     <input type="password"
                         class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
@@ -44,15 +45,14 @@
                 </div>
                 <?php endif;?>
 
-                <div class="relative w-full mb-3 px-5">
-                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                        for="grid-password">Imagen</label>
-                    <input type="file"
-                        class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                        placeholder="image" name="image" value="<?= $user_data['image'] ?>" />
+                <div class="relative w-full mb-2 px-5">
+                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" for="grid-password">
+                        Sube tu foto de perfil
+                    </label>
+
+                    <input type="file" name="archivo"
+                        class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150">
                 </div>
-
-
                 <div class="relative w-full mb-3 px-5">
                     <div id="pecesSelecr"
                         class="col-span-6 sm:col-span-3 rounded-md border border-gray-300 bg-white py-2 px-3">
@@ -82,6 +82,12 @@
                     </div>
                 </div>
             </div>
+
+            <span>IMAGEN ACTUAL
+            <input type="hidden" name="oldimage"  value="<?= $user_data['image'] ?>" >
+            <img width="20%" src="<?= base_url().'uploads/'. $user_data['image']; ?>" alt="Descripción de la imagen" />
+            </span>
+
             <div class="text-center mt-6">
                 <div id="main" class="grid grid-rows-1 grid-flow-col">
                     <div class="relative w-full mb-3 px-5">

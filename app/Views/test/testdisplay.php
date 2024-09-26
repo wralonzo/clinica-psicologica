@@ -110,7 +110,7 @@
             confirmButtonText: "Eliminar el registro!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch('<?=  base_url() ?>test/testborrar/borrar/'+id, {
+                fetch('<?=  base_url() ?>test/testborrar/'+id, {
                         method: 'GET',
                         headers: {
                             "Content-Type": "application/json",

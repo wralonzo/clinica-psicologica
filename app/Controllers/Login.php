@@ -36,7 +36,8 @@ class Login extends BaseController
 					'nombres' => $data['nombres'],
 					'apellidos' => $data['apellidos'],
 					'role' => $data['role'],
-					'logeado' => TRUE
+					'logeado' => TRUE,
+					'image' => $data['image']
 				];
 				$this->session->set($ses_data);
 				return redirect()->route('/');
@@ -63,6 +64,24 @@ class Login extends BaseController
 		];
 
 		if ($this->validate($rules)) {
+			$file = $this->request->getFile('archivo');
+
+			$nombreArchivo = '';
+			if ($file->isValid() && !$file->hasMoved()) {
+				$nombreArchivo = $file->getRandomName().$file->getClientExtension(); 
+				$rutaDestino = '../public/uploads/';
+				if (!is_dir($rutaDestino)) {
+					mkdir($rutaDestino, 0777, true);
+				}
+			
+				// Intenta mover el archivo
+				if ($file->move($rutaDestino, $nombreArchivo)) {
+					echo "Archivo movido exitosamente a: " . $nombreArchivo;
+				} else {
+					echo "Error al mover el archivo.";
+				}
+			}
+
 			$userModel = new LoginModel();
 			$data = [
 				'nombres'     => $this->request->getVar('nombres'),
@@ -70,7 +89,8 @@ class Login extends BaseController
 				'correo'     => $this->request->getVar('correo'),
 				'role'     => $this->request->getVar('role'),
 				'contacto'     => $this->request->getVar('contacto'),
-				'clave' => password_hash($this->request->getVar('clave'), PASSWORD_DEFAULT)
+				'clave' => password_hash($this->request->getVar('clave'), PASSWORD_DEFAULT),
+				'image' => $nombreArchivo
 			];
 			$userModel->save($data);
 			return redirect()->to('/user/list');
@@ -109,13 +129,35 @@ class Login extends BaseController
 				view('login/editar', $data)
 				. view('capas/footer');
 		}
+
+		$file = $this->request->getFile('archivo');
+
+		$nombreArchivo = '';
+		if ($file->isValid() && !$file->hasMoved()) {
+			$nombreArchivo = $file->getRandomName(); 
+			$rutaDestino = '../public/uploads/';
+			if (!is_dir($rutaDestino)) {
+				mkdir($rutaDestino, 0777, true);
+			}
+		
+			// Intenta mover el archivo
+			if ($file->move($rutaDestino, $nombreArchivo)) {
+				echo "Archivo movido exitosamente a: " . $nombreArchivo;
+			} else {
+				echo "Error al mover el archivo.";
+			}
+		}else{
+			$nombreArchivo = $this->request->getVar('oldimage');
+		}
+
 		$dataUpdate = [
 			'nombres'     => $this->request->getVar('nombres'),
 			'apellidos'     => $this->request->getVar('apellidos'),
 			'correo'     => $this->request->getVar('correo'),
 			'role'     => $this->request->getVar('role'),
 			'contacto'     => $this->request->getVar('contacto'),
-			'clave' => password_hash($this->request->getVar('clave'), PASSWORD_DEFAULT)
+			// 'clave' => password_hash($this->request->getVar('clave'), PASSWORD_DEFAULT),
+			'image' => 		$nombreArchivo
 		];
 		$userModel->where('id', $id)
 			->set($dataUpdate)

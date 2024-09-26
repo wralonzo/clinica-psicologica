@@ -53,7 +53,7 @@
                                     <td class="px-6 py-4"><?= $cita['jornada'] ?></td>
                                     <td class="px-6 py-4"><?= $cita['estado_cita'] ?></td>
                                     <td class="px-6 py-4"><?= $cita['paciente'] ?></td>
-                                    <td class="px-6 py-4">class="text-center">
+                                    <td class="px-6 py-4">
                                         <a href="<?= base_url() ?>cita/editar/<?= $cita['cita'] ?>"><i
                                                 class="fas fa-pencil-alt"></i></a>
                                         <a onclick="deletePass(<?= $cita['cita'] ?>)"><i

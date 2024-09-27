@@ -99,16 +99,16 @@
                                 class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                                 <option value="">Seleccione un estudiante</option>
                                 <?php
-                if (count($estudiantes) > 0) :
-                  foreach ($estudiantes as $estudiante) :
-                    $select = '';
-                    if ($user_data['estudiante'] == $estudiante['id_estudiante']) {
-                      $select = 'selected';
-                    } ?>
-                                <option <?= $select ?> value="<?= $estudiante['id_estudiante'] ?>">
-                                    <?= $estudiante['nombre'] ?> <?= $estudiante['apellido'] ?></option>
+                                if (count($estudiantes) > 0) :
+                                    foreach ($estudiantes as $estudiante) :
+                                        $select = '';
+                                        if ($user_data['estudiante'] == $estudiante['id_estudiante']) {
+                                            $select = 'selected';
+                                        } ?>
+                                        <option <?= $select ?> value="<?= $estudiante['id_estudiante'] ?>">
+                                            <?= $estudiante['nombre'] ?> <?= $estudiante['apellido'] ?></option>
                                 <?php endforeach;
-                endif; ?>
+                                endif; ?>
                             </select>
                         </div>
                     </div>
@@ -131,13 +131,6 @@
                 </div>
 
 
-
-
-
-
-
-
-
                 <div class="relative w-full mb-3 px-5">
                     <h2 class="text-xs text-blueGray-600 font-bold text-2xl text-center mb-5">Detalle del conyugue</h2>
                 </div>
@@ -145,77 +138,77 @@
                     <div class="relative w-full mb-3 px-5">
                         <label class="block uppercase text-xs text-blueGray-600 font-bold mb-2"
                             for="grid-password">Nombre</label>
-                        <input  type="text"
+                        <input type="text"
                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                            placeholder="nombre" value="<?= isset($conyugue['nombre'])?$conyugue['nombre']: '' ?>"
+                            placeholder="nombre" value="<?= isset($conyugue['nombre']) ? $conyugue['nombre'] : '' ?>"
                             name="nombrec" />
                     </div>
 
                     <div class="relative w-full mb-3 px-5">
                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                             for="grid-password">ocupacion</label>
-                        <input  type="text"
+                        <input type="text"
                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                             placeholder="ocupacion"
-                            value="<?= isset($conyugue['ocupacion'])? $conyugue["ocupacion"]: "" ?>"
+                            value="<?= isset($conyugue['ocupacion']) ? $conyugue["ocupacion"] : "" ?>"
                             name="ocupacionc" />
                     </div>
 
                     <div class="relative w-full mb-3 px-5">
                         <label class="block uppercase  text-blueGray-600 text-xs font-bold mb-2"
                             for="grid-password">observacion</label>
-                        <input  type="text"
+                        <input type="text"
                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                             placeholder="observacion"
-                            value="<?= isset($conyugue['observacion'])? $conyugue["observacion"]: "" ?>"
+                            value="<?= isset($conyugue['observacion']) ? $conyugue["observacion"] : "" ?>"
                             name="observacionc" />
                     </div>
 
                     <div class="relative w-full mb-3 px-5">
                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                             for="grid-password">escolaridad</label>
-                        <input  type="text"
+                        <input type="text"
                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                             placeholder="escolaridad"
-                            value="<?= isset($conyugue['escolaridad'])? $conyugue["escolaridad"]: "" ?>"
+                            value="<?= isset($conyugue['escolaridad']) ? $conyugue["escolaridad"] : "" ?>"
                             name="escolaridadc" />
                     </div>
 
                     <div class="relative w-full mb-3 px-5">
                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                             for="grid-password">edad</label>
-                        <input  type="text"
+                        <input type="text"
                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                            placeholder="edad" value="<?= isset($conyugue['edad'])? $conyugue["edad"]: "" ?>"
+                            placeholder="edad" value="<?= isset($conyugue['edad']) ? $conyugue["edad"] : "" ?>"
                             name="edadc" />
                     </div>
 
                     <div class="relative w-full mb-3 px-5">
                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                             for="grid-password">lugar familia</label>
-                        <input  type="text"
+                        <input type="text"
                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                             placeholder="lugar familia"
-                            value="<?= isset($conyugue['lugar_familia'])? $conyugue["lugar_familia"]: "" ?>"
+                            value="<?= isset($conyugue['lugar_familia']) ? $conyugue["lugar_familia"] : "" ?>"
                             name="lugar_familiac" />
                     </div>
 
                     <div class="relative w-full mb-3 px-5">
                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                             for="grid-password">direccion</label>
-                        <input  type="text"
+                        <input type="text"
                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                             placeholder="direccion"
-                            value="<?= isset($conyugue['direccion'])? $conyugue["direccion"]: "" ?>"
+                            value="<?= isset($conyugue['direccion']) ? $conyugue["direccion"] : "" ?>"
                             name="direccionc" />
                     </div>
                     <div class="relative w-full mb-3 px-5">
                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                             for="grid-password">telefono</label>
-                        <input  type="text"
+                        <input type="text"
                             class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                             placeholder="telefono"
-                            value="<?= isset($conyugue['telefono'])? $conyugue["telefono"]: "" ?>" name="telefonoc" />
+                            value="<?= isset($conyugue['telefono']) ? $conyugue["telefono"] : "" ?>" name="telefonoc" />
                     </div>
                 </div>
                 <hr class="py-3" />
@@ -231,7 +224,7 @@
                         <div class="relative w-full mb-2 px-5">
                             <label class="block uppercase text-xs text-blueGray-600 font-bold mb-2"
                                 for="grid-password">datos generales</label>
-                            <input  type="text"
+                            <input type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                 placeholder="datos generales"
                                 value="<?= isset($ficha['datos_generales']) ? $ficha['datos_generales'] : '' ?>"
@@ -241,7 +234,7 @@
                         <div class="relative w-full mb-3 px-5 ">
                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                 for="grid-password">situacion y ambiente familiar</label>
-                            <input  type="text"
+                            <input type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                 placeholder="situacion familiar"
                                 value="<?= isset($ficha['situacion_familiar']) ? $ficha['situacion_familiar'] : '' ?>"
@@ -261,7 +254,7 @@
                         <div class="relative w-full mb-3 px-5 ">
                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                 for="grid-password">historia del problema actual</label>
-                            <input  type="text"
+                            <input type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                 placeholder="historia problema"
                                 value="<?= isset($ficha['historia_problema']) ? $ficha['historia_problema'] : '' ?>"
@@ -271,7 +264,7 @@
                         <div class="relative w-full mb-3 px-5 ">
                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                 for="grid-password">historia patologica y no patologica</label>
-                            <input  type="text"
+                            <input type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                 placeholder="historia_patologica"
                                 value="<?= isset($ficha['historia_patologica']) ? $ficha['historia_patologica'] : '' ?>"
@@ -295,7 +288,7 @@
                         <div class="relative w-full mb-3 px-5 ">
                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                 for="grid-password">Situacion laboral</label>
-                            <input  type="text"
+                            <input type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                 placeholder="situacion_laboral"
                                 value="<?= isset($ficha['situacion_laboral']) ? $ficha['situacion_laboral'] : '' ?>"
@@ -308,7 +301,7 @@
                         <div class="relative w-full mb-3 px-5 ">
                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                 for="grid-password">Apariencia personal</label>
-                            <input  type="text"
+                            <input type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                 placeholder="apariencia_personal"
                                 value="<?= isset($ficha['apariencia_personal']) ? $ficha['apariencia_personal'] : '' ?>"
@@ -317,7 +310,7 @@
                         <div class="relative w-full mb-3 px-5 ">
                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                 for="grid-password">Actitud de conducta</label>
-                            <input  type="text"
+                            <input type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                 placeholder="actitud_conducta"
                                 value="<?= isset($ficha['actitud_conducta']) ? $ficha['actitud_conducta'] : '' ?>"
@@ -326,7 +319,7 @@
                         <div class="relative w-full mb-3 px-5 ">
                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                 for="grid-password">Actitud motora</label>
-                            <input  type="text"
+                            <input type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                 placeholder="actitud_motora"
                                 value="<?= isset($ficha['actitud_motora']) ? $ficha['actitud_motora'] : '' ?>"
@@ -335,7 +328,7 @@
                         <div class="relative w-full mb-3 px-5 ">
                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                 for="grid-password">Conciencia</label>
-                            <input  type="text"
+                            <input type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                 placeholder="conciencia"
                                 value="<?= isset($ficha['conciencia']) ? $ficha['conciencia'] : '' ?>"
@@ -344,21 +337,21 @@
                         <div class="relative w-full mb-3 px-5 ">
                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                 for="grid-password">Animo</label>
-                            <input  type="text"
+                            <input type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                 placeholder="animo" value="<?= $ficha['animo'] ?>" name="animo" />
                         </div>
                         <div class="relative w-full mb-3 px-5 ">
                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                 for="grid-password">Pensamiento</label>
-                            <input  type="text"
+                            <input type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                 placeholder="pensamiento" value="<?= $ficha['pensamiento'] ?>" name="pensamiento" />
                         </div>
                         <div class="relative w-full mb-3 px-5 ">
                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                 for="grid-password">Pruebas auxiliares</label>
-                            <input  type="text"
+                            <input type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                 placeholder="pruebas_auxiliares" value="<?= $ficha['pruebas_auxiliares'] ?>"
                                 name="pruebas_auxiliares" />
@@ -366,7 +359,7 @@
                         <div class="relative w-full mb-3 px-5 ">
                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                 for="grid-password">Criterios diagnosticos</label>
-                            <input  type="text"
+                            <input type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                 placeholder="criterios_diagnostico" value="<?= $ficha['criterios_diagnostico'] ?>"
                                 name="criterios_diagnostico" />
@@ -382,7 +375,7 @@
                         <div class="relative w-full mb-3 px-5 ">
                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                 for="grid-password">Metas alcanzadas</label>
-                            <input  type="text"
+                            <input type="text"
                                 class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                                 placeholder="metas_alcanzadas" value="<?= $ficha['metas_alcanzadas'] ?>"
                                 name="metas_alcanzadas" />
@@ -399,6 +392,10 @@
                         <br>
                         <h2 class="text-xs text-blueGray-600 font-bold text-2xl text-center mb-5">Situación familiar
                         </h2>
+                        <?php if (count($situacion) < 1): ?>
+                            <button class="text-green-500" type="button" onclick="add_table(undefined)"><i
+                                    class="fa fa-plus fa-2x"></i></button>
+                        <?php endif; ?>
                     </div>
                     <table class="tableFamiliar w-full bg-transparent">
                         <thead>
@@ -414,69 +411,69 @@
                         </thead>
                         <tbody>
                             <?php $CONTADOR = 0;
-              foreach ($situacion as $sit) : ?>
-                            <tr class="maintableFamiliar">
-                                <td>
-                                    <div class="relative w-full mb-3 px-5 ">
-                                        <input value="<?= $sit['nombre'] ?>"  type="text"
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            placeholder="nombre"
-                                            name="situcionOld[<?= $sit['id_situacion'] ?>][nombref]" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="relative w-full mb-3 px-5 ">
-                                        <input value="<?= $sit['sexo'] ?>"  type="text"
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            placeholder="sexo" name="situcionOld[<?= $sit['id_situacion'] ?>][sexof]" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="relative w-full mb-3 px-5 ">
-                                        <input value="<?= $sit['edad'] ?>"  type="text"
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            placeholder="edad" name="situcionOld[<?= $sit['id_situacion'] ?>][edadf]" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="relative w-full mb-3 px-5 ">
-                                        <input value="<?= $sit['estado_civil'] ?>"  type="text"
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            placeholder="estado_civil"
-                                            name="situcionOld[<?= $sit['id_situacion'] ?>][estado_civilf]" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="relative w-full mb-3 px-5 ">
-                                        <input value="<?= $sit['escolaridad'] ?>"  type="text"
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            placeholder="escolaridad"
-                                            name="situcionOld[<?= $sit['id_situacion'] ?>][escolaridadf]" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="relative w-full mb-3 px-5 ">
-                                        <input value="<?= $sit['observacion'] ?>"  type="text"
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            placeholder="observacionf"
-                                            name="situcionOld[<?= $sit['id_situacion'] ?>][observacionf]" />
-                                    </div>
-                                </td>
-                                <?php if ($CONTADOR == 0) : ?>
-                                <td><button class="text-green-500" type="button" onclick="add_table(undefined)"><i
-                                            class="fa fa-plus fa-2x"></i></button></td>
+                            foreach ($situacion as $sit) : ?>
+                                <tr class="maintableFamiliar">
+                                    <td>
+                                        <div class="relative w-full mb-3 px-5 ">
+                                            <input value="<?= $sit['nombre'] ?>" type="text"
+                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                                placeholder="nombre"
+                                                name="situcionOld[<?= $sit['id_situacion'] ?>][nombref]" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="relative w-full mb-3 px-5 ">
+                                            <input value="<?= $sit['sexo'] ?>" type="text"
+                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                                placeholder="sexo" name="situcionOld[<?= $sit['id_situacion'] ?>][sexof]" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="relative w-full mb-3 px-5 ">
+                                            <input value="<?= $sit['edad'] ?>" type="text"
+                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                                placeholder="edad" name="situcionOld[<?= $sit['id_situacion'] ?>][edadf]" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="relative w-full mb-3 px-5 ">
+                                            <input value="<?= $sit['estado_civil'] ?>" type="text"
+                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                                placeholder="estado_civil"
+                                                name="situcionOld[<?= $sit['id_situacion'] ?>][estado_civilf]" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="relative w-full mb-3 px-5 ">
+                                            <input value="<?= $sit['escolaridad'] ?>" type="text"
+                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                                placeholder="escolaridad"
+                                                name="situcionOld[<?= $sit['id_situacion'] ?>][escolaridadf]" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="relative w-full mb-3 px-5 ">
+                                            <input value="<?= $sit['observacion'] ?>" type="text"
+                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                                placeholder="observacionf"
+                                                name="situcionOld[<?= $sit['id_situacion'] ?>][observacionf]" />
+                                        </div>
+                                    </td>
+                                    <?php if ($CONTADOR == 0) : ?>
+                                        <td><button class="text-green-500" type="button" onclick="add_table(undefined)"><i
+                                                    class="fa fa-plus fa-2x"></i></button></td>
                                 <?php
-                  endif;
-                  $CONTADOR = $CONTADOR + 1;
-                endforeach;
-                ?>
-                            </tr>
+                                    endif;
+                                    $CONTADOR = $CONTADOR + 1;
+                                endforeach;
+                                ?>
+                                </tr>
                         </tbody>
                     </table>
 
 
 
-                    <table class="items-center w-full dsm py-4">
+                    <table class="w-full py-4">
                         <thead>
                             <tr>
                                 <th class="uppercase">Padres:</th>
@@ -488,7 +485,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="main-dsm">
+                            <tr>
                                 <td>
                                     <div class="relative w-full mb-3 px-5 ">
                                         <input type="text" value="<?= $ficha['padres'] ?>"
@@ -535,6 +532,10 @@
                         <br>
                         <h2 class="text-xs text-blueGray-600 font-bold text-2xl text-center mb-5">Evaluacion segun DSM V
                             WHODA 2.0</h2>
+                        <?php if (count($dsm) < 1): ?>
+                            <button class="text-green-500" type="button" onclick="add_tabledsm(undefined)"><i
+                                    class="fa fa-plus fa-2x"></i></button>
+                        <?php endif; ?>
                     </div>
 
                     <table class="items-center w-full dsm">
@@ -546,30 +547,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $CONTADOR = 0; foreach ($dsm as $ds) :
-              ?>
-                            <tr class="main-dsm">
-                                <td>
-                                    <div class="relative w-full mb-3 px-5 ">
-                                        <input value="<?= $ds['nombre'] ?>"  type="text"
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            placeholder="nombre" name="dsmOld[<?= $ds['id_dsm']?>][escalad]" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="relative w-full mb-3 px-5 ">
-                                        <input value="<?= $ds['hallazgo'] ?>"  type="text"
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            placeholder="nombre" name="dsmOld[<?= $ds['id_dsm']?>][hallazgod]" />
-                                    </div>
-                                </td>
-                                <?php if ($CONTADOR == 0) : ?>
-                                <td><button class="text-green-500" type="button" onclick="add_tabledsm(undefined)"><i
-                                            class="fa fa-plus fa-2x"></i></button></td>
-                                <?php endif; ?>
-                            </tr>
+                            <?php $CONTADOR = 0;
+                            foreach ($dsm as $ds) :
+                            ?>
+                                <tr class="main-dsm">
+                                    <td>
+                                        <div class="relative w-full mb-3 px-5 ">
+                                            <input value="<?= $ds['nombre'] ?>" type="text"
+                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                                placeholder="nombre" name="dsmOld[<?= $ds['id_dsm'] ?>][escalad]" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="relative w-full mb-3 px-5 ">
+                                            <input value="<?= $ds['hallazgo'] ?>" type="text"
+                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                                placeholder="nombre" name="dsmOld[<?= $ds['id_dsm'] ?>][hallazgod]" />
+                                        </div>
+                                    </td>
+                                    <?php if ($CONTADOR == 0) : ?>
+                                        <td><button class="text-green-500" type="button" onclick="add_tabledsm(undefined)"><i
+                                                    class="fa fa-plus fa-2x"></i></button></td>
+                                    <?php endif; ?>
+                                </tr>
                             <?php
-                  $CONTADOR = $CONTADOR + 1;  endforeach ?>
+                                $CONTADOR = $CONTADOR + 1;
+                            endforeach ?>
                         </tbody>
                     </table>
 
@@ -578,6 +581,10 @@
                         <br>
                         <br>
                         <h2 class="text-xs text-blueGray-600 font-bold text-2xl text-center mb-5">Plan terapeutico</h2>
+                        <?php if (count($plan) < 1): ?>
+                            <button class="text-green-500" type="button" onclick="add_tableplan(undefined)"><i
+                                    class="fa fa-plus fa-2x"></i></button>
+                        <?php endif; ?>
                     </div>
                     <table class="items-center w-full plan">
                         <thead>
@@ -588,38 +595,40 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $CONTADOR = 0; foreach ($plan as $ds) :
-              ?>
-                            <tr class="main-plan">
-                                <td>
-                                    <div class="relative w-full mb-3 px-5 ">
-                                        <input value="<?= $ds['fecha'] ?>"  type="date"
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            placeholder="nombre" name="planOld[<?= $ds['id_plan'] ?>][fechap]" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="relative w-full mb-3 px-5 ">
-                                        <input value="<?= $ds['actividad'] ?>"  type="text"
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            placeholder="nombre" name="planOld[<?= $ds['id_plan'] ?>][actividap]" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="relative w-full mb-3 px-5 ">
-                                        <input value="<?= $ds['detalle'] ?>"  type="text"
-                                            class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                            placeholder="nombre" name="planOld[<?= $ds['id_plan'] ?>][logrop]" />
-                                    </div>
-                                </td>
-                                <?php if ($CONTADOR == 0) : ?>
-                                <td><button class="text-green-500" type="button" onclick="add_tableplan(undefined)"><i
-                                            class="fa fa-plus fa-2x"></i></button></td>
+                            <?php $CONTADOR = 0;
+                            foreach ($plan as $ds) :
+                            ?>
+                                <tr class="main-plan">
+                                    <td>
+                                        <div class="relative w-full mb-3 px-5 ">
+                                            <input value="<?= $ds['fecha'] ?>" type="date"
+                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                                placeholder="nombre" name="planOld[<?= $ds['id_plan'] ?>][fechap]" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="relative w-full mb-3 px-5 ">
+                                            <input value="<?= $ds['actividad'] ?>" type="text"
+                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                                placeholder="nombre" name="planOld[<?= $ds['id_plan'] ?>][actividap]" />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="relative w-full mb-3 px-5 ">
+                                            <input value="<?= $ds['detalle'] ?>" type="text"
+                                                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                                placeholder="nombre" name="planOld[<?= $ds['id_plan'] ?>][logrop]" />
+                                        </div>
+                                    </td>
+                                    <?php if ($CONTADOR == 0) : ?>
+                                        <td><button class="text-green-500" type="button" onclick="add_tableplan(undefined)"><i
+                                                    class="fa fa-plus fa-2x"></i></button></td>
 
-                                <?php endif; ?>
-                            </tr>
+                                    <?php endif; ?>
+                                </tr>
                             <?php
-                  $CONTADOR = $CONTADOR + 1;  endforeach ?>
+                                $CONTADOR = $CONTADOR + 1;
+                            endforeach ?>
                         </tbody>
                     </table>
 
@@ -634,11 +643,11 @@
                             personal</h2>
                         <div id="main" class="grid grid-rows-3 grid-flow-col">
                             <?php $customFields = getFields('apariencia');
-              foreach ($customFields as $field) :
-                $value = getFieldsValue($field->id_campo, $idPaciente);
-                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value)? $value->valor:'');
-              endforeach;
-              ?>
+                            foreach ($customFields as $field) :
+                                $value = getFieldsValue($field->id_campo, $idPaciente);
+                                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value) ? $value->valor : '');
+                            endforeach;
+                            ?>
                         </div>
 
                         <hr class="py-3" />
@@ -646,11 +655,11 @@
                             conducta</h2>
                         <div id="main" class="grid grid-rows-2 grid-flow-col">
                             <?php $customFields = getFields('conducta');
-              foreach ($customFields as $field) :
-                $value = getFieldsValue($field->id_campo, $idPaciente);
-                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value)? $value->valor:'');
-              endforeach;
-              ?>
+                            foreach ($customFields as $field) :
+                                $value = getFieldsValue($field->id_campo, $idPaciente);
+                                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value) ? $value->valor : '');
+                            endforeach;
+                            ?>
                         </div>
 
                         <hr class="py-3" />
@@ -658,33 +667,33 @@
                         </h2>
                         <div id="main" class="grid grid-rows-4 grid-flow-col">
                             <?php $customFields = getFields('motora');
-              foreach ($customFields as $field) :
-                $value = getFieldsValue($field->id_campo, $idPaciente);
-                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value)? $value->valor:'');
-              endforeach;
-              ?>
+                            foreach ($customFields as $field) :
+                                $value = getFieldsValue($field->id_campo, $idPaciente);
+                                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value) ? $value->valor : '');
+                            endforeach;
+                            ?>
                         </div>
 
                         <hr class="py-3" />
                         <h2 class="text-xs-3 text-blueGray-600 font-bold mb-5 relative w-full mb-2 px-8">Conciencia</h2>
                         <div id="main" class="grid grid-rows-1 grid-flow-col">
                             <?php $customFields = getFields('conciencia');
-              foreach ($customFields as $field) :
-                $value = getFieldsValue($field->id_campo, $idPaciente);
-                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value)? $value->valor:'');
-              endforeach;
-              ?>
+                            foreach ($customFields as $field) :
+                                $value = getFieldsValue($field->id_campo, $idPaciente);
+                                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value) ? $value->valor : '');
+                            endforeach;
+                            ?>
                         </div>
 
                         <hr class="py-3" />
                         <h2 class="text-xs-3 text-blueGray-600 font-bold mb-5 relative w-full mb-2 px-8">Animo</h2>
                         <div id="main" class="grid grid-rows-2 grid-flow-col">
                             <?php $customFields = getFields('animo');
-              foreach ($customFields as $field) :
-                $value = getFieldsValue($field->id_campo, $idPaciente);
-                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value)? $value->valor:'');
-              endforeach;
-              ?>
+                            foreach ($customFields as $field) :
+                                $value = getFieldsValue($field->id_campo, $idPaciente);
+                                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value) ? $value->valor : '');
+                            endforeach;
+                            ?>
                         </div>
 
                         <hr class="py-3" />
@@ -692,33 +701,33 @@
                         </h2>
                         <div id="main" class="grid grid-rows-1 grid-flow-col">
                             <?php $customFields = getFields('pensamiento');
-              foreach ($customFields as $field) :
-                $value = getFieldsValue($field->id_campo, $idPaciente);
-                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value)? $value->valor:'');
-              endforeach;
-              ?>
+                            foreach ($customFields as $field) :
+                                $value = getFieldsValue($field->id_campo, $idPaciente);
+                                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value) ? $value->valor : '');
+                            endforeach;
+                            ?>
                         </div>
 
                         <hr class="py-3" />
                         <h2 class="text-xs-3 text-blueGray-600 font-bold mb-5 relative w-full mb-2 px-8">Contenido</h2>
                         <div id="main" class="grid grid-rows-2 grid-flow-col">
                             <?php $customFields = getFields('contenido');
-              foreach ($customFields as $field) :
-                $value = getFieldsValue($field->id_campo, $idPaciente);
-                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value)? $value->valor:'');
-              endforeach;
-              ?>
+                            foreach ($customFields as $field) :
+                                $value = getFieldsValue($field->id_campo, $idPaciente);
+                                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value) ? $value->valor : '');
+                            endforeach;
+                            ?>
                         </div>
 
                         <hr class="py-3" />
                         <h2 class="text-xs-3 text-blueGray-600 font-bold mb-5 relative w-full mb-2 px-8">Memoria</h2>
                         <div id="main" class="grid grid-rows-1 grid-flow-col">
                             <?php $customFields = getFields('memoria');
-              foreach ($customFields as $field) :
-                $value = getFieldsValue($field->id_campo, $idPaciente);
-                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value)? $value->valor:'');
-              endforeach;
-              ?>
+                            foreach ($customFields as $field) :
+                                $value = getFieldsValue($field->id_campo, $idPaciente);
+                                echo inputType($field->tipo, $field->id_campo, $field->nombre, isset($value) ? $value->valor : '');
+                            endforeach;
+                            ?>
                         </div>
 
 
@@ -762,180 +771,180 @@
 
 
 <script>
-function add_table(itemid) {
-    var table_row = '';
-    var item_key = $("body").find('tbody .item').length + 1;
+    function add_table(itemid) {
+        var table_row = '';
+        var item_key = $("body").find('tbody .item').length + 1;
 
-    data = get_item_preview_values();
-    table_row += '<tr class="sortable item">';
-    table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key +
-        '][nombref]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
-    table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key +
-        '][sexof]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
-    table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key +
-        '][edadf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
-    table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key +
-        '][estado_civilf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
-    table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key +
-        '][escolaridadf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
-    table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key +
-        '][observacionf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
+        data = get_item_preview_values();
+        table_row += '<tr class="sortable item">';
+        table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key +
+            '][nombref]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
+        table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key +
+            '][sexof]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
+        table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key +
+            '][edadf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
+        table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key +
+            '][estado_civilf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
+        table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key +
+            '][escolaridadf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
+        table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="situcion[' + item_key +
+            '][observacionf]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
 
-    table_row += '<td><button type="button" class="text-red-500" onclick="delete_item(this,' + itemid +
-        '); return false;"><i class="fas fa-trash-alt"></i></button></td>';
+        table_row += '<td><button type="button" class="text-red-500" onclick="delete_item(this,' + itemid +
+            '); return false;"><i class="fas fa-trash-alt"></i></button></td>';
 
-    table_row += '</tr>';
+        table_row += '</tr>';
 
-    $('table.tableFamiliar tbody').append(table_row);
-    $(document).trigger({
-        type: "item-added-to-table",
-        data: data,
-        row: table_row
-    });
-    // clean_items();
-}
+        $('table.tableFamiliar tbody').append(table_row);
+        $(document).trigger({
+            type: "item-added-to-table",
+            data: data,
+            row: table_row
+        });
+        // clean_items();
+    }
 
-function get_item_preview_values() {
-    var response = {};
-    response.nombref = $('.maintableFamiliar input[name="nombref"]').val();
-    response.sexof = $('.maintableFamiliar input[name="sexof"]').val();
-    response.estado_civilf = $('.maintableFamiliar input[name="estado_civilf"]').val();
-    response.edadf = $('.maintableFamiliar input[name="edadf"]').val();
-    response.escolaridadf = $('.maintableFamiliar input[name="escolaridadf"]').val();
-    response.observacionf = $('.maintableFamiliar input[name="observacionf"]').val();
-    return response;
-}
+    function get_item_preview_values() {
+        var response = {};
+        response.nombref = $('.maintableFamiliar input[name="nombref"]').val();
+        response.sexof = $('.maintableFamiliar input[name="sexof"]').val();
+        response.estado_civilf = $('.maintableFamiliar input[name="estado_civilf"]').val();
+        response.edadf = $('.maintableFamiliar input[name="edadf"]').val();
+        response.escolaridadf = $('.maintableFamiliar input[name="escolaridadf"]').val();
+        response.observacionf = $('.maintableFamiliar input[name="observacionf"]').val();
+        return response;
+    }
 
-function clean_items() {
-    var previewArea = $('.maintableFamiliar');
+    function clean_items() {
+        var previewArea = $('.maintableFamiliar');
 
-    previewArea.find('input[name="nombref"]').val('');
-    previewArea.find('input[name="sexof"]').val('');
-    previewArea.find('input[name="edadf"]').val('');
-    previewArea.find('input[name="escolaridadf"]').val('');
-    previewArea.find('input[name="escolaridadf"]').val('');
-    previewArea.find('input[name="observacionf"]').val('');
-}
+        previewArea.find('input[name="nombref"]').val('');
+        previewArea.find('input[name="sexof"]').val('');
+        previewArea.find('input[name="edadf"]').val('');
+        previewArea.find('input[name="escolaridadf"]').val('');
+        previewArea.find('input[name="escolaridadf"]').val('');
+        previewArea.find('input[name="observacionf"]').val('');
+    }
 
-function delete_item(row, itemid) {
-    $(row).parents('tr').remove();
-    // // If is edit we need to add to input removed_items to track activity
-    // if ($('input[name="isedit"]').length > 0) {
-    //     $('#removed-items').append(hidden_input('removed_items[]', itemid));
-    // }
-}
-
-
-
-function add_tabledsm(itemid) {
-    var table_row = '';
-    var item_key = $("body").find('tbody .dsm').length + 1;
-
-    data = get_item_preview_valuesdsm();
-    table_row += '<tr class="sortable dsm">';
-    table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="dsm[' + item_key +
-        '][escalad]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
-    table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="dsm[' + item_key +
-        '][hallazgod]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
-
-    table_row += '<td><button type="button" class="text-red-500" onclick="delete_itemdsm(this,' + itemid +
-        '); return false;"><i class="fas fa-trash-alt"></i></button></td>';
-
-    table_row += '</tr>';
-
-    $('table.dsm tbody').append(table_row);
-    $(document).trigger({
-        type: "item-added-to-table",
-        data: data,
-        row: table_row
-    });
-    // clean_itemsdsm();
-}
-
-function get_item_preview_valuesdsm() {
-    var response = {};
-    response.escalad = $('.main-dsm input[name="escalad"]').val();
-    response.hallazgod = $('.main-dsm input[name="hallazgod"]').val();
-    return response;
-}
-
-function clean_itemsdsm() {
-    var previewArea = $('.main-dsm');
-    previewArea.find('input[name="escalad"]').val('');
-    previewArea.find('input[name="hallazgod"]').val('');
-}
-
-function delete_itemdsm(row, itemid) {
-    $(row).parents('tr').remove();
-}
+    function delete_item(row, itemid) {
+        $(row).parents('tr').remove();
+        // // If is edit we need to add to input removed_items to track activity
+        // if ($('input[name="isedit"]').length > 0) {
+        //     $('#removed-items').append(hidden_input('removed_items[]', itemid));
+        // }
+    }
 
 
 
-function add_tableplan(itemid) {
-    var table_row = '';
-    var item_key = $("body").find('tbody .plan').length + 1;
+    function add_tabledsm(itemid) {
+        var table_row = '';
+        var item_key = $("body").find('tbody .dsm').length + 1;
 
-    data = get_item_preview_valuesdsm();
-    table_row += '<tr class="sortable dsm">';
-    table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="date" name="plan[' + item_key +
-        '][fechap]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
-    table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="plan[' + item_key +
-        '][actividap]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
-    table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="plan[' + item_key +
-        '][logrop]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
+        data = get_item_preview_valuesdsm();
+        table_row += '<tr class="sortable dsm">';
+        table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="dsm[' + item_key +
+            '][escalad]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
+        table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="dsm[' + item_key +
+            '][hallazgod]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
 
-    table_row += '<td><button type="button" class="text-red-500" onclick="delete_itemplan(this,' + itemid +
-        '); return false;"><i class="fas fa-trash-alt"></i></button></td>';
+        table_row += '<td><button type="button" class="text-red-500" onclick="delete_itemdsm(this,' + itemid +
+            '); return false;"><i class="fas fa-trash-alt"></i></button></td>';
 
-    table_row += '</tr>';
+        table_row += '</tr>';
 
-    $('table.plan tbody').append(table_row);
-    $(document).trigger({
-        type: "item-added-to-table",
-        data: data,
-        row: table_row
-    });
-    // clean_itemsplan();
-}
+        $('table.dsm tbody').append(table_row);
+        $(document).trigger({
+            type: "item-added-to-table",
+            data: data,
+            row: table_row
+        });
+        // clean_itemsdsm();
+    }
 
-function get_item_preview_valuesplan() {
-    var response = {};
-    response.fechap = $('.main-plan input[name="fechap"]').val();
-    response.actividap = $('.main-plan input[name="actividap"]').val();
-    response.logrop = $('.main-plan input[name="logrop"]').val();
-    return response;
-}
+    function get_item_preview_valuesdsm() {
+        var response = {};
+        response.escalad = $('.main-dsm input[name="escalad"]').val();
+        response.hallazgod = $('.main-dsm input[name="hallazgod"]').val();
+        return response;
+    }
 
-function clean_itemsplan() {
-    var previewArea = $('.main-plan');
-    previewArea.find('input[name="fechap"]').val('');
-    previewArea.find('input[name="actividap"]').val('');
-    previewArea.find('input[name="logrop"]').val('');
-}
+    function clean_itemsdsm() {
+        var previewArea = $('.main-dsm');
+        previewArea.find('input[name="escalad"]').val('');
+        previewArea.find('input[name="hallazgod"]').val('');
+    }
 
-function delete_itemplan(row, itemid) {
-    $(row).parents('tr').remove();
-}
+    function delete_itemdsm(row, itemid) {
+        $(row).parents('tr').remove();
+    }
+
+
+
+    function add_tableplan(itemid) {
+        var table_row = '';
+        var item_key = $("body").find('tbody .plan').length + 1;
+
+        data = get_item_preview_valuesdsm();
+        table_row += '<tr class="sortable dsm">';
+        table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="date" name="plan[' + item_key +
+            '][fechap]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
+        table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="plan[' + item_key +
+            '][actividap]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
+        table_row += '<td><div class="relative w-full mb-3 px-5 "><input type="text" name="plan[' + item_key +
+            '][logrop]" class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"> </div></td>';
+
+        table_row += '<td><button type="button" class="text-red-500" onclick="delete_itemplan(this,' + itemid +
+            '); return false;"><i class="fas fa-trash-alt"></i></button></td>';
+
+        table_row += '</tr>';
+
+        $('table.plan tbody').append(table_row);
+        $(document).trigger({
+            type: "item-added-to-table",
+            data: data,
+            row: table_row
+        });
+        // clean_itemsplan();
+    }
+
+    function get_item_preview_valuesplan() {
+        var response = {};
+        response.fechap = $('.main-plan input[name="fechap"]').val();
+        response.actividap = $('.main-plan input[name="actividap"]').val();
+        response.logrop = $('.main-plan input[name="logrop"]').val();
+        return response;
+    }
+
+    function clean_itemsplan() {
+        var previewArea = $('.main-plan');
+        previewArea.find('input[name="fechap"]').val('');
+        previewArea.find('input[name="actividap"]').val('');
+        previewArea.find('input[name="logrop"]').val('');
+    }
+
+    function delete_itemplan(row, itemid) {
+        $(row).parents('tr').remove();
+    }
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    $('.confirmar').submit(function(e) {
-        e.preventDefault();
-        Swal.fire({
-            title: "Quiere actualizar el registro?",
-            text: "Guardar!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonText: 'Cancelar?',
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Guardar el registro!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                this.submit();
-            }
+    document.addEventListener("DOMContentLoaded", function() {
+        $('.confirmar').submit(function(e) {
+            e.preventDefault();
+            Swal.fire({
+                title: "Quiere actualizar el registro?",
+                text: "Guardar!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonText: 'Cancelar?',
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Guardar el registro!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.submit();
+                }
+            });
         });
-    });
-})
+    })
 </script>

@@ -392,7 +392,7 @@
                     </table>
                     <br><br>
 
-                    <table class="items-center w-full dsm py-4">
+                    <table class="items-center w-full py-4">
                         <thead>
                             <tr>
                                 <th class="uppercase">Padres:</th>
@@ -404,7 +404,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="main-dsm">
+                            <tr class="">
                                 <td>
                                     <div class="relative w-full mb-3 px-5 ">
                                         <input type="text"

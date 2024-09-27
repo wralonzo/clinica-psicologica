@@ -208,13 +208,10 @@
                         <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
                             id="user-dropdown">
                             <a href="#"
-                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Cerrar
+                                class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
                                 <?php echo session()->get('nombres'); ?>
                                     <?php echo session()->get('apellidos'); ?></a>
-                        </div>
-                        <div class="hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
-                            id="user-dropdown">
-                            <a href="<?= base_url() ?>login/logout"
+                            <a id="user-dropdown" href="<?= base_url() ?>login/logout"
                                 class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">Cerrar
                                 Sesión</a>
                         </div>

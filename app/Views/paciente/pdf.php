@@ -63,17 +63,17 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="border border-slate-300"><?= $user_data['nombre'] ?></td>
-                    <td><?= $user_data['lugar'] ?></td>
-                    <td><?= $user_data['fecha_nacimiento'] ?></td>
-                    <td><?= $user_data['edad'] ?></td>
-                    <td><?= $user_data['sexo'] ?></td>
-                    <td><?= $user_data['lugar_familia'] ?></td>
-                    <td><?= $user_data['ocupacion'] ?></td>
-                    <td><?= $user_data['observaciones'] ?></td>
-                    <td><?= $user_data['escolaridad'] ?></td>
-                    <td><?= $user_data['estado_civil'] ?></td>
-                    <td><?= $user_data['estado'] ?></td>
+                    <td class="border border-slate-300"><?= isset($user_data['nombre']) ? $user_data['nombre'] : '' ?></td>
+                    <td><?= isset($user_data['lugar']) ? $user_data['lugar'] : '' ?></td>
+                    <td><?= isset($user_data['fecha_nacimiento']) ? $user_data['fecha_nacimiento'] : '' ?></td>
+                    <td><?= isset($user_data['edad']) ? $user_data['edad'] : '' ?></td>
+                    <td><?= isset($user_data['sexo']) ? $user_data['sexo'] : '' ?></td>
+                    <td><?= isset($user_data['lugar_familia']) ? $user_data['lugar_familia'] : '' ?></td>
+                    <td><?= isset($user_data['ocupacion']) ? $user_data['ocupacion'] : '' ?></td>
+                    <td><?= isset($user_data['observaciones']) ? $user_data['observaciones'] : '' ?></td>
+                    <td><?= isset($user_data['escolaridad']) ? $user_data['escolaridad'] : '' ?></td>
+                    <td><?= isset($user_data['estado_civil']) ? $user_data['estado_civil'] : '' ?></td>
+                    <td><?= isset($user_data['estado']) ? $user_data['estado'] : '' ?></td>
                 </tr>
             </tbody>
         </table>
@@ -126,14 +126,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><?= $conyugue['nombre'] ?></td>
-                    <td><?= $conyugue['ocupacion'] ?></td>
-                    <td><?= $conyugue['observacion'] ?></td>
-                    <td><?= $conyugue['escolaridad'] ?></td>
-                    <td><?= $conyugue['edad'] ?></td>
-                    <td><?= $conyugue['lugar_familia'] ?></td>
-                    <td><?= $conyugue['direccion'] ?></td>
-                    <td><?= $conyugue['telefono'] ?></td>
+                    <td><?= isset($conyugue['nombre']) ? $conyugue['nombre'] : '' ?></td>
+                    <td><?= isset($conyugue['ocupacion']) ? $conyugue['ocupacion'] : '' ?></td>
+                    <td><?= isset($conyugue['observacion']) ? $conyugue['observacion'] : '' ?></td>
+                    <td><?= isset($conyugue['escolaridad']) ? $conyugue['escolaridad'] : '' ?></td>
+                    <td><?= isset($conyugue['edad']) ? $conyugue['edad'] : '' ?></td>
+                    <td><?= isset($conyugue['lugar_familia']) ? $conyugue['lugar_familia'] : '' ?></td>
+                    <td><?= isset($conyugue['direccion']) ? $conyugue['direccion'] : '' ?></td>
+                    <td><?= isset($conyugue['telefono']) ? $conyugue['telefono'] : '' ?></td>
                 </tr>
             </tbody>
         </table>

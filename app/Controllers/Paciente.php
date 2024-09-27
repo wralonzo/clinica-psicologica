@@ -169,7 +169,7 @@ class Paciente extends BaseController
 		$dataOne = $dataModel->where('id_paciente', $idPaciente)->first();
 		if (!$this->request->getPost()) {
 			$estudiante = new Estudiante_model();
-			$dataSend = $estudiante->where('estado','Activo')->findAll();
+			$dataSend = $estudiante->where('estado', 'Activo')->findAll();
 
 			$conyugueModel = new Conyugue_model();
 			$dataCon = $conyugueModel->where('paciente', $idPaciente)->first();
@@ -215,6 +215,7 @@ class Paciente extends BaseController
 			'estado_civil' => $this->request->getVar('estado_civil'),
 			'estudiante' => $this->request->getVar('estudiante'),
 			'nombre' => $this->request->getVar('nombre'),
+			'estado' => $this->request->getVar('estado'),
 		];
 		$dataModel->where('id_paciente', $idPaciente)
 			->set($data)
@@ -272,19 +273,21 @@ class Paciente extends BaseController
 		$situacionModel = new Situacion_model();
 		$sitOlds = $this->request->getPost('situcionOld');
 		$sitnew = $this->request->getPost('situcion');
-		if (count($sitOlds) > 0) {
-			foreach ($sitOlds as $key => $item) {
-				$dataField = [
-					'nombre' => $item['nombref'],
-					'sexo' => $item['sexof'],
-					'edad' => $item['edadf'],
-					'estado_civil' => $item['estado_civilf'],
-					'escolaridad' => $item['escolaridadf'],
-					'observacion' => $item['observacionf'],
-				];
-				$situacionModel->where('id_situacion', $key)
-					->set($dataField)
-					->update();
+		if ($sitOlds != null) {
+			if (count($sitOlds) > 0) {
+				foreach ($sitOlds as $key => $item) {
+					$dataField = [
+						'nombre' => $item['nombref'],
+						'sexo' => $item['sexof'],
+						'edad' => $item['edadf'],
+						'estado_civil' => $item['estado_civilf'],
+						'escolaridad' => $item['escolaridadf'],
+						'observacion' => $item['observacionf'],
+					];
+					$situacionModel->where('id_situacion', $key)
+						->set($dataField)
+						->update();
+				}
 			}
 		}
 		if (isset($sitnew)) {
@@ -307,15 +310,17 @@ class Paciente extends BaseController
 		$dsmModel = new DSM_model();
 		$dsmOlds = $this->request->getPost('dsmOld');
 		$dsmnew = $this->request->getPost('dsm');
-		if (count($dsmOlds) > 0) {
-			foreach ($dsmOlds as $key => $item) {
-				$dataField = [
-					'nombre' => $item['escalad'],
-					'hallazgo' => $item['hallazgod'],
-				];
-				$dsmModel->where('id_dsm', $key)
-					->set($dataField)
-					->update();
+		if ($dsmOlds != null) {
+			if (count($dsmOlds) > 0) {
+				foreach ($dsmOlds as $key => $item) {
+					$dataField = [
+						'nombre' => $item['escalad'],
+						'hallazgo' => $item['hallazgod'],
+					];
+					$dsmModel->where('id_dsm', $key)
+						->set($dataField)
+						->update();
+				}
 			}
 		}
 		if (isset($dsmnew)) {
@@ -332,18 +337,22 @@ class Paciente extends BaseController
 		$plaModel = new Plan_model();
 		$planOlds = $this->request->getPost('planOld');
 		$plannew = $this->request->getPost('plan');
-		if (count($planOlds) > 0) {
-			foreach ($planOlds as $key => $field) {
-				$dataField = [
-					'fecha' => $field['fechap'],
-					'actividad' => $field['actividap'],
-					'detalle' => $field['logrop'],
-				];
-				$plaModel->where('id_plan', $key)
-					->set($dataField)
-					->update();
+
+		if ($planOlds != null) {
+			if (count($planOlds) > 0) {
+				foreach ($planOlds as $key => $field) {
+					$dataField = [
+						'fecha' => $field['fechap'],
+						'actividad' => $field['actividap'],
+						'detalle' => $field['logrop'],
+					];
+					$plaModel->where('id_plan', $key)
+						->set($dataField)
+						->update();
+				}
 			}
 		}
+
 		if (isset($plannew)) {
 			foreach ($plannew as $field) {
 				$dataField = [
@@ -392,7 +401,7 @@ class Paciente extends BaseController
 		$citaModel = new Cita_model();
 
 		$citaModel->where('paciente', $id_cliente)
-		->delete();
+			->delete();
 		$campoModel->where('id_paciente', $id_cliente)
 			->delete();
 
@@ -412,7 +421,7 @@ class Paciente extends BaseController
 
 		$fichaModel->where('paciente', $id_cliente)
 			->delete();
-		
+
 		return json_encode(true);
 	}
 

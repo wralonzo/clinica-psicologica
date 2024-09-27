@@ -76,7 +76,7 @@
                                     <a class="bg-blue-500 hover:bg-blue-700 text-white text-center font-bold py-2 px-4 rounded" href="<?= base_url() ?>paciente/editar/<?= $usuario['id_paciente'] ?>"><i class="fas fa-pencil-alt"></i></a>
                                     <!-- <a class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" href="<?= base_url() ?>conyugue/editar/<?= $usuario['id_paciente'] ?>">Conyugue</a> -->
                                     <a class="bg-green-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded" target="_blank" href="<?= base_url() ?>paciente/pdf/<?= $usuario['id_paciente'] ?>"><i class="fa fa-print"></i></a>
-                                    <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="deletePass(<?= $usuario['id_paciente'] ?>)"><i class="fas fa-trash-alt"></i></a>
+                                    <!-- <a class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="deletePass(<?= $usuario['id_paciente'] ?>)"><i class="fas fa-trash-alt"></i></a> -->
                                 </td>
                             </tr>
                     <?php endforeach;
